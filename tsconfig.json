@@ -19,8 +19,10 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		"utils/firebase.ts",
-		"pages/index.tsx"
+		"utils/firebase.js",
+		"pages/index.tsx",
+		"pages/Auth/index.jsx",
+		"components/Chat.jsx"
 	],
 	"exclude": ["node_modules"]
 }

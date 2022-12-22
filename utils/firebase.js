@@ -1,6 +1,10 @@
 // Import the functions you need from the SDKs you need
+import "firebase/compat/firestore";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import "firebase/analytics";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getFirestore, collection } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,7 +19,13 @@ const firebaseConfig = {
 	appId: "1:665238637271:web:e6ab73ee223dab0e6abe92",
 	measurementId: "G-C12SR9HS6H",
 };
-
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-// export const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const signInWithGoogle = () => {
+	const provider = new GoogleAuthProvider();
+	signInWithPopup(auth, provider).then((res) => {
+		console.log(res);
+	});
+};
+export const messagesRef = collection(db, "messages");
