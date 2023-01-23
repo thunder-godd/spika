@@ -7,11 +7,11 @@ import { auth, signInWithGoogle } from "../../utils/firebase";
 const SignIn = () => {
 	return (
 		<>
-			<div className="max-w-sm border-light-purple">
+			<div className="max-w-sm border border-light-purple">
 				Sign in With Google
 				<br />
 				<button
-					className="bg-dark-purple border-light-purple"
+					className="bg-light-purple border border-light-purple"
 					onClick={signInWithGoogle}>
 					Sign in
 				</button>
