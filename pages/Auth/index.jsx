@@ -9,6 +9,7 @@ const SignIn = () => {
 		<>
 			<div className="max-w-sm border-light-purple">
 				Sign in With Google
+				<br />
 				<button
 					className="bg-dark-purple border-light-purple"
 					onClick={signInWithGoogle}>
